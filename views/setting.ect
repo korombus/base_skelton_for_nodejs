@@ -1,0 +1,22 @@
+<% extend 'layout_my.ect' %>
+
+<div class="container">
+  <br />
+  <h1 class="mt-5"><%= @message.title %></h1>
+  <div class="row">
+    <ul>
+      <li>
+        <a href="/change_nickname_my"><%= @message.link_change_nickname %></a>
+      </li>
+      <li>
+        <a href="/change_email_my"><%= @message.link_change_email %></a>
+      </li>
+      <li>
+        <a href="/change_password_my"><%= @message.link_change_password %></a>
+      </li>
+      <li>
+        <a href="/change_twofa_my"><%= @message.link_two_fa %></a>
+      </li>
+    </ul>
+  </div>
+</div>

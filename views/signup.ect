@@ -1,0 +1,49 @@
+<% extend 'layout.ect' %>
+
+<div class="container">
+  <br />
+  <h1 class="mt-5"><%= @message.title %></h1>
+
+  <% if @success : %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">x</span></button>
+      <%- @message.successMessage %>
+    </div>
+  <% else if @faild : %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">x</span></button>
+      <% if @err.errAlreadyUser : %>
+        <%- @message.faildAlreadyUser %>
+
+      <% else if @err.errYetUser : %>
+        <%- @message.faildYetUser %>
+
+      <% else if @err.errFreezeUser : %>
+        <%- @message.faildFreezeUser %>
+
+      <% else if @err.successReMessage : %>
+        <%- @message.successReMessage %>
+
+      <% else if @err.errOther : %>
+        <%- @message.faildOther %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <form method="POST" role="form">
+    <div class="form-group">
+      <label for="InputEmail"><%= @message.labelAddress %> <font color="red"><% if @err.errEmail : %><%= @message.errorEmail %><% else if @err.errAddress : %><%= @message.errorAddress %><% end %></font></label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="ABC@example.com" value=<%= @email %>>
+    </div>
+    <div class="form-group">
+      <label for="InputUserName"><%= @message.labelName %> <font color="red"><% if @err.errName : %><%= @message.errorName %><% else if @err.errNameLength : %><%= @message.errorNameLength %><% end %></font></label>
+      <input type="text" class="form-control" name="name" id="name" value=<%= @name %>>
+    </div>
+    <div class="form-group">
+      <label for="InputPassword"><%= @message.labelPass %> <font color="red"><% if @err.errPass : %><%= @message.errorPass %><% end %></font></label>
+      <input type="password" class="form-control" name="password" id="password" value=<%= @password %>>
+    </div>
+    <input type="hidden" name="_csrf" value=<%= @_csrf %>>
+    <button type="submit" class="btn btn-primary"><%= @message.submitButton %></button>
+  </form>
+</div>

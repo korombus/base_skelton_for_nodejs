@@ -1,0 +1,69 @@
+{
+  "setting": {
+    "host": "localhost",
+    "port": "3000"
+  },
+  "db": {
+    "clusterName": {
+      "master": "MASTER",
+      "anonymouse_slave": "SLAVE*",
+      "slave1": "SLAVE1",
+      "slave2": "SLAVE2"
+    },
+    "master": {
+      "host": "localhost",
+      "user": "skelton",
+      "password": "IMhZLObt",
+      "port": 3306,
+      "database": "test_svs",
+      "timezone": "jst"
+    },
+    "slave": {
+      "host": "localhost",
+      "user": "skelton",
+      "password": "IMhZLObt",
+      "database": "test_svs",
+      "connectTimeout": 1000,
+      "supportBigNumbers": true,
+      "connectionLimit": 10,
+      "removeNodeErrorCount": 3,
+      "timezone": "jst"
+    }
+  },
+  "table": {
+    "user": "user",
+    "register_reserve": "register_reservation_user",
+    "change_email": "reserve_change_email",
+    "change_password": "reserve_change_password",
+    "tableCreateList": {
+      "user": "CREATE TABLE IF NOT EXISTS user( id INT UNSIGNED NOT NULL AUTO_INCREMENT, user_id VARCHAR(32) UNIQUE NOT NULL, nickname CHAR(24) NOT NULL, password VARCHAR(32) NOT NULL, email VARCHAR(128) UNIQUE NOT NULL, status ENUM('YET', 'OK', 'DEACTIVE', 'FREEZE') NOT NULL, twofa BIT(1) NOT NULL, twofa_key VARCHAR(64), user_role TINYINT UNSIGNED NOT NULL DEFAULT 121, PRIMARY KEY(id) ) ENGINE = InnoDB;",
+      "register_reservation_user": "CREATE TABLE IF NOT EXISTS register_reservation_user( token VARCHAR(32) NOT NULL, status ENUM('YET', 'DONE', 'EXPIRED') NOT NULL, email VARCHAR(128) NOT NULL, register_limit_date DATETIME NOT NULL) ENGINE = InnoDB;",
+      "change_email": "CREATE TABLE IF NOT EXISTS reserve_change_email( user_id VARCHAR(32) NOT NULL, token VARCHAR(32) NOT NULL, current_email VARCHAR(128) NOT NULL, new_email VARCHAR(128) NOT NULL, status ENUM('YET', 'DONE', 'EXPIRED'), reserve_date DATETIME NOT NULL, PRIMARY KEY(user_id)) ENGINE = InnoDB;",
+      "change_password": "CREATE TABLE IF NOT EXISTS reserve_change_password( token VARCHAR(32) NOT NULL, email VARCHAR(128) NOT NULL, status ENUM('YET', 'DONE', 'EXPIRED'), reserve_date DATETIME NOT NULL, foreign key(email) references user(email)) ENGINE = InnoDB;"
+    }
+  },
+  "mail": {
+    "smtpConfig": {
+      "host": "smtp.gmail.com",
+      "port": 465,
+      "secure": true,
+      "auth": {
+        "user": "smtp user",
+        "pass": "smtp pass"
+      }
+    },
+    "from": "{Email address}"
+  },
+  "init": {
+    "file": {
+      "name": "init_end"
+    }
+  },
+  "userRoleCode": {
+    "registerReserveUser": 121,
+    "registerUser": 100,
+    "privilegedUser": 74,
+    "fullOpenUser": 29,
+    "manager": 51
+  }
+}

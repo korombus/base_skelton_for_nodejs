@@ -1,0 +1,197 @@
+{
+	"index": {
+		"title": "Title"
+	},
+	"signup_init":{
+		"title": "新しいサービスを開始します。",
+		"description": "データベースの初期設定のため、必要な項目を入力して下さい。",
+		"labelDBUserName": "データベースのユーザー名",
+		"labelDBPassword": "データベースのパスワード",
+		"labelAddress": "メールアドレス",
+		"labelName": "ユーザー名(最大20文字まで)",
+		"labelPass": "パスワード",
+		"successMessage": "おめでとうございます。新しいサービスが開始されました。<br />続いて、あなたを登録します。",
+		"allSuccessMessage": "お疲れ様でした。<br />すべての設定が完了しました。<br />設定したユーザー情報を利用して、ログイン画面からログインして下さい。",
+		"errorName": "名前を入力して下さい。",
+		"errorPass": "パスワードを入力して下さい。",
+		"errorEmail": "メールアドレスを入力して下さい。",
+		"errorAddress": "正しいメールアドレスを入力して下さい。",
+		"errorNameLength": "名前は最大20文字までです。",
+		"submitButton": "サービスを開始"
+	},
+	"signup": {
+		"title": "新規登録",
+		"labelAddress": "メールアドレス",
+		"labelName": "ユーザー名(最大20文字まで)",
+		"labelPass": "パスワード",
+		"sendMailSubject": "本登録のご案内",
+		"sendMailHTMLBody1": "仮登録ありがとうございます。<br />以下のURLより本登録をお願い致します。<br /><br />",
+		"sendMailHTMLBody2": "<br /><br />本URLの有効期限は3日間です。",
+		"sendMailTextBody1": "仮登録ありがとうございます。\n以下のURLより本登録をお願い致します。\n\n",
+		"sendMailTextBody2": "\n\n本URLの有効期限は3日間です。",
+		"successMessage": "ご登録したメールアドレスに本登録用のメールをお送りました。<br />ご確認をお願い致します。",
+		"successReMessage": "以前の仮登録の有効期限が切れておりました。<br />再度、本登録用のメールをお送り致しましたのでご確認をお願い致します。",
+		"faildAlreadyUser": "そのユーザーは既に存在します。<br />ログインをお試しください。",
+		"faildYetUser": "まだ本登録が済んでおりません。<br />仮登録メールより本登録を行って下さい。<br />メールが届かない場合、迷惑メールフォルダもお確かめ下さい。",
+		"faildFreezeUser": "何らかの理由によりその情報ではご登録頂けません。<br />ご理解のほど、よろしくお願い致します。",
+		"faildOther": "エラーが発生しました。しばらく時間をおいてから再度お試しください。",
+		"errorName": "名前を入力して下さい。",
+		"errorPass": "パスワードを入力して下さい。",
+		"errorEmail": "メールアドレスを入力して下さい。",
+		"errorAddress": "正しいメールアドレスを入力して下さい。",
+		"errorNameLength": "名前は最大20文字までです。",
+		"submitButton": "新規登録"
+	},
+	"user_register": {
+		"title": "ユーザー登録",
+		"success": "本登録が完了致しました。ログインページよりログインして下さい。",
+		"expire": "URLの期限が切れています。再度新規登録を行って下さい。",
+		"error": "不正なURLです。トップページからやり直してください。",
+		"errorOther": "エラーが発生しました。しばらく時間をおいてから再度お試しください。"
+	},
+	"login": {
+		"title": "ログイン",
+		"labelAddress": "メールアドレス",
+		"labelPass": "パスワード",
+		"faildYetUser": "まだ本登録が済んでおりません。<br />仮登録メールより本登録を行って下さい。<br />メールが届かない場合、迷惑メールフォルダもお確かめ下さい。",
+		"faildNotUser": "ご入力されたメールアドレスかパスワードが正しくありません。<br />パスワードをお忘れの場合は、パスワードを忘れた場合をお試し下さい。",
+		"faildFreezeUser": "何らかの理由によりその情報ではログイン頂けません。<br />ご理解のほど、よろしくお願い致します。",
+		"faildDeactiveUser": "そのユーザーは存在しません。<br />お手数ですが新規登録よりユーザー登録を行った上でログインをお願い致します。",
+		"faildOther": "エラーが発生しました。しばらく時間をおいてから再度お試しください。",
+		"errorPass": "パスワードを入力して下さい。",
+		"errorEmail": "メールアドレスを入力して下さい。",
+		"errorAddress": "正しいメールアドレスを入力して下さい。",
+		"submitButton": "ログイン",
+		"forgotPassword": "パスワードを忘れた場合"
+	},
+	"forgot_password": {
+		"title": "パスワードを忘れた場合",
+		"labelAddress": "メールアドレス",
+		"sendMailSubject": "パスワード変更のご案内",
+		"sendMailHTMLBody1": "パスワードの変更依頼を受け付けました。<br />以下のURLよりパスワード変更の完了をお願い致します。<br /><br />",
+		"sendMailHTMLBody2": "<br /><br />本URLの有効期限は3時間です。<br /><br />本メールにお心当りがない場合は、URLを利用せずにサポートまでお問い合わせの上<br />パスワードの即時変更を行うことを推奨致します。",
+		"sendMailTextBody1": "パスワードの変更依頼を受け付けました。\n以下のURLよりパスワード変更の完了をお願い致します。\n\n",
+		"sendMailTextBody2": "\n\n本URLの有効期限は3時間です。\n\n本メールにお心当りがない場合は、URLを利用せずにサポートまでお問い合わせの上\nパスワードの即時変更を行うことを推奨致します。",
+		"successMessage": "ご入力頂いたメールアドレスに変更用のメールをお送り致しました。<br />変更期限は3時間です。",
+		"faildYetUser": "まだ本登録が済んでおりません。<br />仮登録メールより本登録を行って下さい。<br />メールが届かない場合、迷惑メールフォルダもお確かめ下さい。",
+		"faildNotUser": "ご入力されたメールアドレスにて登録されているユーザーがいません。<br />ご登録がお済みでない場合は、新規登録をご利用下さい。",
+		"faildFreezeUser": "何らかの理由によりその情報ではパスワードの変更をご利用頂けません。<br />ご理解のほど、よろしくお願い致します。",
+		"faildDeactiveUser": "そのユーザーは存在しません。<br />お手数ですが新規登録よりご登録をお願い致します。",
+		"faildOther": "エラーが発生しました。しばらく時間をおいてから再度お試しください。",
+		"faildAlreadyReserve": "すでにパスワード変更依頼を受け付けております。<br />メールが届かない場合、迷惑メールフォルダもお確かめ下さい。",
+		"faildExpiredReserve": "以前の変更依頼の有効期限が切れていたため、再度メールアドレスにメールをお送り致しました。<br />変更期限は3時間です。",
+		"errorEmail": "メールアドレスを入力して下さい。",
+		"errorAddress": "正しいメールアドレスを入力して下さい。",
+		"submitButton": "再発行"
+	},
+	"change_password": {
+		"title": "パスワード変更",
+		"labelPassword": "新しいパスワード",
+		"labelRePassword": "パスワード確認",
+		"successMessage": "パスワードを変更致しました。<br />ログインページよりログインを行って下さい。",
+		"faildExpire": "URLの期限が切れています。再度メールアドレスの変更を行って下さい。",
+		"faildError": "不正なURLです。トップページからやり直してください。",
+		"errorOther": "エラーが発生しました。しばらく時間をおいてから再度お試しください。",
+		"errorPasswordEmpty": "新しいパスワードを入力して下さい。",
+		"errorRePasswordEmpty": "パスワード確認を入力して下さい。",
+		"errorFaildRePassword": "新しいパスワードとパスワード確認が異なっています。",
+		"errorUserIdNotFound": "ユーザーが見つかりませんでした。<br />サポートまでご連絡下さい。",
+		"submitButton": "変更"
+	},
+	"my": {
+		"title": "マイページ"
+	},
+	"setting": {
+		"title": "各種設定",
+		"link_change_nickname": "名前変更",
+		"link_change_email": "メールアドレス変更",
+		"link_change_password": "パスワード変更",
+		"link_two_fa": "二段階認証設定",
+		"link_unsubscribe": "退会"
+	},
+	"change_nickname_my": {
+		"title": "名前変更",
+		"labelNickname": "新しい名前",
+		"successMessage": "名前を変更致しました。",
+		"errorEmpty": "新しい名前を入力して下さい。",
+		"errorLength": "名前は最大20文字までです。",
+		"errorOther": "エラーが発生しました。しばらく時間をおいてから再度お試しください。",
+		"submitButton": "変更"
+	},
+	"change_email_my": {
+		"title": "メールアドレス変更",
+		"labelCurrentEmail": "現在のメールアドレス",
+		"labelInputEmail": "新しいメールアドレス",
+		"sendMailSubject": "メールアドレス変更のご案内",
+		"sendMailHTMLBody1": "メールアドレスの変更依頼を受け付けました。<br />以下のURLよりメールアドレス変更の完了をお願い致します。<br /><br />",
+		"sendMailHTMLBody2": "<br /><br />本URLの有効期限は1日間です。<br /><br />本メールにお心当りがない場合は、URLを利用せずにサポートまでお問い合わせの上<br />パスワードの即時変更を行うことを推奨致します。",
+		"sendMailTextBody1": "メールアドレスの変更依頼を受け付けました。\n以下のURLよりメールアドレス変更の完了をお願い致します。\n\n",
+		"sendMailTextBody2": "\n\n本URLの有効期限は1日間です。\n\n本メールにお心当りがない場合は、URLを利用せずにサポートまでお問い合わせの上\nパスワードの即時変更を行うことを推奨致します。",
+		"successMessage": "新しいメールアドレスに変更用のメールをお送り致しました。<br />変更期限は1日です。",
+		"errorEmpty": "新しいメールアドレスを入力して下さい。",
+		"errorNoChange": "現在と同じメールアドレスには変更できません。",
+		"errorAlreadyRegisterEmail": "そのメールアドレスは別のユーザーが使用中です。<br />別のメールアドレスをご入力頂くか、お心当たりがない場合はサポートまでご連絡下さい。",
+		"errorAlreadyChange": "すでにメールアドレス変更を受け付けております。<br />新しいメールアドレスにお送りしている変更用メールより変更手続きを完了して下さい。",
+		"errorOther": "エラーが発生しました。しばらく時間をおいてから再度お試しください。",
+		"submitButton": "変更"
+	},
+	"change_password_my": {
+		"title": "パスワード変更",
+		"labelPassword": "新しいパスワード",
+		"labelRePassword": "パスワード確認",
+		"successMessage": "パスワードを変更致しました。",
+		"errorPasswordEmpty": "新しいパスワードを入力して下さい。",
+		"errorRePasswordEmpty": "パスワード確認を入力して下さい。",
+		"errorFaildRePassword": "新しいパスワードとパスワード確認が異なっています。",
+		"errorOther": "エラーが発生しました。しばらく時間をおいてから再度お試しください。",
+		"submitButton": "変更"
+	},
+	"change_twofa_my": {
+		"title": "二段階認証",
+		"labelCode": "認証コード入力",
+		"twofaOn": "二段階認証中",
+		"twofaOff": "二段階認証設定",
+		"errorEmpty": "認証コードを入力して下さい。",
+		"errorCode": "認証コードが間違っています。",
+		"submitButton": "設定"
+	},
+	"change_email": {
+		"title": "メールアドレス変更",
+		"success": "本登録が完了致しました。ログインページよりログインして下さい。",
+		"expire": "URLの期限が切れています。再度メールアドレスの変更を行って下さい。",
+		"error": "不正なURLです。トップページからやり直してください。",
+		"errorOther": "エラーが発生しました。しばらく時間をおいてから再度お試しください。"
+	},
+	"two_fa": {
+		"title": "二段階認証が設定されています。<br />認証コードを入力して下さい。",
+		"errorEmpty": "認証コードを入力して下さい。",
+		"errorCode": "認証コードが間違っています。",
+		"errorOther": "エラーが発生しました。しばらく時間をおいてから再度お試しください。",
+		"submitButton": "認証"
+	},
+	"unsubscribe": {
+		"title": "退会",
+		"labelAddress": "メールアドレス",
+		"labelPass": "パスワード",
+		"faildOther": "エラーが発生しました。しばらく時間をおいてから再度お試しください。",
+		"errorPass": "パスワードを入力して下さい。",
+		"errorEmail": "メールアドレスを入力して下さい。",
+		"errorAddress": "正しいメールアドレスを入力して下さい。",
+		"submitButton": "退会"
+	},
+	"layout": {
+		"index": "ホーム",
+		"signup": "新規登録",
+		"login": "ログイン"
+	},
+	"layout_my": {
+		"my": "ホーム",
+		"setting": "各種設定",
+		"logout": "ログアウト"
+	},
+	"logout": "logout",
+	"favicon": {
+		"ico": "favicon.ico"
+	},
+	"javascripts": "javascripts"
+}

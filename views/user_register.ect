@@ -1,0 +1,26 @@
+<% extend 'layout.ect' %>
+
+<div class="container">
+  <br />
+  <h1 class="mt-5"></h1>
+  
+  <% if @success : %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">x</span></button>
+      <%- @message.success %>
+    </div>
+  <% else : %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">x</span></button>
+      <% if @expire : %>
+        <%- @message.expire %>
+
+      <% else if @error : %>
+        <%- @message.error %>
+
+      <% else if @errorOther : %>
+        <%- @message.errorOther %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

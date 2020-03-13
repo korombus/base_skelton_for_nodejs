@@ -1,0 +1,22 @@
+<% extend 'layout_my.ect' %>
+
+<div class="container">
+  <br />
+  <h1 class="mt-5"></h1>
+  <form method="POST" role="form">
+    <div class="form-group">
+      <label for="InputEmail"><%= @message.labelAddress %> <font color="red"><% if @err.errEmail : %><%= @message.errorEmail %><% else if @err.errAddress : %><%= @message.errorAddress %><% end %></font></label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="ABC@example.com" value=<%= @email %>>
+    </div>
+    <div class="form-group">
+      <label for="InputPassword"><%= @message.labelPass %> <font color="red"><% if @err.errPass : %><%= @message.errorPass %><% end %></font></label>
+      <input type="password" class="form-control" name="password" id="password"  data-toggle="password" value=<%= @password %>>
+    </div>
+    <div class="row">
+      <div class="col-6 col-sm-7 col-md-8 col-lg-9">
+        <input type="hidden" name="_csrf" value=<%= @_csrf %>>
+        <button type="submit" class="btn btn-primary"><%= @message.submitButton %></button>
+      </div>
+    </div>
+  </form>
+</div>

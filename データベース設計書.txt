@@ -1,0 +1,69 @@
+﻿データベース設計書
+
+Database : test_svs
+user : skelton
+pass : IMhZLObt
+
+
+// データベース作成
+CREATE DATABASE IF NOT EXISTS test_svs;
+
+// ユーザー作成
+GRANT ALL ON test_svs.* to skelton@localhost IDENTIFIED BY "IMhZLObt";
+
+// クエリのタイムアウトを設定
+set global max_execution_time=1000;
+
+// データベース一覧
+user 												: ユーザー情報テーブル
+register_reservation_user 	: 登録待ちユーザー情報テーブル
+reserve_change_email				: メールアドレス変更情報テーブル
+reserve_change_password			: パスワード変更情報テーブル
+
+
+
+// テーブルクエリ情報一覧
+CREATE TABLE IF NOT EXISTS user(
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	user_id VARCHAR(32) UNIQUE NOT NULL,
+	nickname CHAR(24) NOT NULL,
+	password VARCHAR(32) NOT NULL,
+	email VARCHAR(128) UNIQUE NOT NULL,
+	status ENUM('YET', 'OK', 'DEACTIVE', 'FREEZE') NOT NULL,
+	twofa BIT(1) NOT NULL,
+	twofa_key VARCHAR(64),
+	user_role TINYINT UNSIGNED NOT NULL DEFAULT 121,
+	PRIMARY KEY(id)
+) ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS register_reservation_user(
+	token VARCHAR(32) NOT NULL,
+	status ENUM('YET', 'DONE', 'EXPIRED') NOT NULL,
+	email VARCHAR(128) NOT NULL,
+	register_limit_date DATETIME NOT NULL
+) ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS reserve_change_email(
+	user_id VARCHAR(32) NOT NULL,
+	token VARCHAR(32) NOT NULL,
+	current_email VARCHAR(128) NOT NULL,
+	new_email VARCHAR(128) NOT NULL,
+	status ENUM('YET', 'DONE', 'EXPIRED'),
+	reserve_date DATETIME NOT NULL,
+	PRIMARY KEY(user_id)
+) ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS reserve_change_password(
+	token VARCHAR(32) NOT NULL,
+	email VARCHAR(128) NOT NULL,
+	status ENUM('YET', 'DONE', 'EXPIRED'),
+	reserve_date DATETIME NOT NULL,
+	foreign key(email) references user(email)
+) ENGINE = InnoDB;
+
+
+// 仮データ設定
+INSERT INTO user (user_id, nickname, password, email, status) values ('a', 'koro', 'aaa', 'a@gmail', 'OK');

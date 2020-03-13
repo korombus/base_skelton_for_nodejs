@@ -1,0 +1,25 @@
+<% extend 'layout_my.ect' %>
+
+<div class="container">
+  <br />
+  <h1 class="mt-5"></h1>
+  <% if @on : %>
+    <%= @message.twofaOn %><br />
+    <form method="POST">
+      <button type="submit" class="btn btn-primary"><%= @message.submitButton %></button>
+    </form>
+  <% else : %>
+    <img src="<%= @qrcode %>" width=256 hight=256>
+
+    <form method="POST" role="form">
+      <div class="form-group">
+        <label for="InputCode"><%= @message.labelCode %> <font color="red"><% if @err.errEmpty : %><%= @message.errorEmpty %><% else if @err.errCode : %><%= @message.errorCode %><% end %></font></label>
+        <input type="text" class="form-control" name="code" id="code">
+      </div>
+      <input type="hidden" name="_csrf" value=<%= @_csrf %>>
+      <input type="hidden" name="sec" value="<%= @secret %>">
+      <input type="hidden" name="qr" value="<%= @qrcode %>">
+      <button type="submit" class="btn btn-primary"><%= @message.submitButton %></button>
+    </form>
+  <% end %>
+</div>

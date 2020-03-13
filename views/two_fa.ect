@@ -1,0 +1,20 @@
+<% extend 'layout.ect' %>
+
+<div class="container">
+  <% if @err.errOther : %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">x</span></button>
+      <%- @message.errorOther %>
+    </div>
+  <% end %>
+  <br />
+  <h1 class="mt-5"><%- @message.title %></h1>
+  <form method="POST" role="form">
+    <div class="form-group">
+      <label for="Inputcode"><font color="red"><% if @err.errEmpty : %><%= @message.errorEmpty %><% else if @err.errCode : %><%= @message.errorCode %><% end %></font></label>
+      <input type="text" class="form-control" name="code" id="code">
+    </div>
+    <input type="hidden" name="_csrf" value=<%= @_csrf %>>
+    <button type="submit" class="btn btn-primary"><%= @message.submitButton %></button>
+  </form>
+</div>

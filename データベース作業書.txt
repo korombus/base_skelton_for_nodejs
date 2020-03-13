@@ -1,0 +1,56 @@
+﻿データベース作業書
+
+
+MySQLが入っていることを前提として進める。
+
+********************************************
+新しいユーザーを作成する。
+
+
+rootユーザーで新しいデータベースを作成。
+
+CREATE DATABASE test_svs;
+
+
+データベースを触れるユーザを作成
+GRANT ALL ON test_svs.* to 'skelton'@'localhost' IDENTIFIED BY 'IMhZLObt';
+
+
+確認
+select USER, HOST from mysql.user;
++---------------+-----------+
+| USER          | HOST      |
++---------------+-----------+
+| mysql.session | localhost |
+| mysql.sys     | localhost |
+| root          | localhost |
+| skelton       | localhost |
++---------------+-----------+
+
+
+できた。
+
+
+
+********************************************
+作ったユーザーで入れるかを確認。
+
+exit
+
+mysql -u skelton -p
+IMhZLObt
+
+show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| test_svs           |
++--------------------+
+
+
+OK
+
+
+********************************************
+テーブル作成はデータベース設計書を参照して作ること。

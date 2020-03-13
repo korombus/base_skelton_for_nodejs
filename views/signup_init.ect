@@ -1,0 +1,47 @@
+<% extend 'layout.ect' %>
+
+<div class="container">
+  <br />
+  <% if @err.allSuccess : %>
+    <br />
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">x</span></button>
+      <%- @message.allSuccessMessage %>
+    </div>
+  <% else if @err.successTableCreate : %>
+    <h2 class="mt-5"><%- @message.successMessage %></h2>
+    <form method="POST" role="form">
+      <div class="form-group">
+        <label for="InputEmail"><%= @message.labelAddress %> <font color="red"><% if @err.errEmail : %><%= @message.errorEmail %><% else if @err.errAddress : %><%= @message.errorAddress %><% end %></font></label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="ABC@example.com" value=<%= @email %>>
+      </div>
+      <div class="form-group">
+        <label for="InputUserName"><%= @message.labelName %> <font color="red"><% if @err.errName : %><%= @message.errorName %><% else if @err.errNameLength : %><%= @message.errorNameLength %><% end %></font></label>
+        <input type="text" class="form-control" name="name" id="name" value=<%= @name %>>
+      </div>
+      <div class="form-group">
+        <label for="InputPassword"><%= @message.labelPass %> <font color="red"><% if @err.errPass : %><%= @message.errorPass %><% end %></font></label>
+        <input type="password" class="form-control" name="password" id="password" value=<%= @password %>>
+      </div>
+      <input type="hidden" name="_csrf" value=<%= @_csrf %>>
+      <input type="hidden" name="table" value=true>
+      <button type="submit" class="btn btn-primary"><%= @message.submitButton %></button>
+    </form>
+  <% else : %>
+    <h1 class="mt-5"><%= @message.title %></h1>
+    <h2><%= @message.description %></h2>
+    <form method="POST" role="form">
+      <div class="form-group">
+        <label for="InputDBUserName"><%= @message.labelDBUserName %> <font color="red"><% if @err.errDBUserName : %><%= @message.errorName %><% end %></font></label>
+        <input type="text" class="form-control" name="dbusername" id="dbusername">
+      </div>
+      <div class="form-group">
+        <label for="InputDBPassword"><%= @message.labelDBPassword %> <font color="red"><% if @err.errDBPassword : %><%= @message.errorPass %><% end %></font></label>
+        <input type="text" class="form-control" name="dbpass" id="dbpass">
+      </div>
+      <input type="hidden" name="_csrf" value=<%= @_csrf %>>
+      <input type="hidden" name="table" value=false>
+      <button type="submit" class="btn btn-primary"><%= @message.submitButton %></button>
+    </form>
+  <% end %>
+</div>
